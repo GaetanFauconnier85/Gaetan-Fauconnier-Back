@@ -1,0 +1,24 @@
+﻿<Window x:Name="Projet_Air_" x:Class="ProjetAirAtlantique.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetAirAtlantique"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Depart" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid Height="70" VerticalAlignment="Top" Background="#FF8F582B" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="725*"/>
+            <ColumnDefinition Width="69*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="36" Margin="222,11,137,11" Width="366" Height="48" ><Run Text="    "/><Run Text="Air Atlantique"/></TextBlock>
+        <Grid Width="70" HorizontalAlignment="Right" Background="#FF8F582B" Grid.ColumnSpan="2">
+            <Button Background="#FF8F582B" Width="60" Height="60" BorderBrush="{x:Null}" Click="Button_Click">
+                <materialDesign:PackIcon Foreground="White" Kind="PermIdentity" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+        </Grid>
+        <Grid Height="350"  Margin="0,0,0,-350" VerticalAlignment="Bottom" Background="White" Grid.ColumnSpan="2">
+        </Grid>
+    </Grid>
+</Window>

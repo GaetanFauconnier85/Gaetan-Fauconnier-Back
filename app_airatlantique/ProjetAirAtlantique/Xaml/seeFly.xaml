@@ -1,0 +1,33 @@
+﻿<Page x:Class="ProjetAirAtlantique.Xaml.seeFly"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetAirAtlantique.Xaml"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="seeFly">
+
+    <Grid>
+        <Grid  Background="White">
+
+            <DataGrid x:Name="dataGridFlies" CanUserAddRows="false" HorizontalAlignment="Left"  VerticalAlignment="Top" AutoGenerateColumns="False" CanUserReorderColumns="False" MinColumnWidth="56" Height="auto" Width="auto" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding trip_used.StartAirport.Libelle}" Width="*" ClipboardContentBinding="{x:Null}" Header="Aéroport de départ"/>
+                    <DataGridTextColumn Binding="{Binding trip_used.EndAirport.Libelle}" Width="*" ClipboardContentBinding="{x:Null}" Header="Aéroport d'arrivé"/>
+                    <DataGridTextColumn Binding="{Binding hour_start}" Width="*" ClipboardContentBinding="{x:Null}" Header="Heure de départ"/>
+                    <DataGridTextColumn Binding="{Binding hour_end}" Width="*" ClipboardContentBinding="{x:Null}" Header="Heure d'arrivée"/>
+                    <DataGridTemplateColumn Header="Supprimer">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Supprimer" Content="Supprimer" Click="Supprimer_Click" Background="#FFE60707"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+    </Grid>
+</Page>

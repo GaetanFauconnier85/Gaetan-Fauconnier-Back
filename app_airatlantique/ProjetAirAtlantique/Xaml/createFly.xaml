@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetAirAtlantique.Xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" x:Class="ProjetAirAtlantique.Xaml.createFly"
+        mc:Ignorable="d"
+        Title="createFly" Height="407" Width="800">
+
+
+    <Grid>
+
+
+        <ComboBox x:Name="trajetList" Width="570" Height="35" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="0" VerticalContentAlignment="Center" Padding="15,0,0,0" Foreground="Black" Margin="110,85,112,0" Background="#FFF3F2F2">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} : {1} - {2}">
+                                <Binding Path="id"/>
+                                <Binding Path="nomAeroportDepart"/>
+                                <Binding Path="nomAeroportArrive"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label x:Name="Error" Foreground="red" Visibility="Hidden"  Content="Tout les champs ne sont pas remplis" Margin="275,257,277,67" />
+        <Button BorderBrush="{x:Null}" Content="Créer le vol"  HorizontalAlignment="Center" Margin="200,295,217,32" VerticalAlignment="Center" Width="375" Height="49" Background="#FF8F582B" Click="Button_Click" />
+        <Label Content="Date et heure de début du vol" HorizontalAlignment="Left" Margin="135,155,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Date et heure de fin du vol" HorizontalAlignment="Left" Margin="480,155,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Liste des trajets" HorizontalAlignment="Left" Margin="345,39,0,0" VerticalAlignment="Top" Width="175"/>
+        <DatePicker Name="datedebut" HorizontalAlignment="Left" Margin="98,214,0,0" VerticalAlignment="Top" Width="120"/>
+        <materialDesign:TimePicker Is24Hours="True" x:Name="PresetTimePickerDebut" Margin="238,214,442,0"/>
+        <DatePicker Name="datefin" HorizontalAlignment="Left" Margin="433,214,0,0" VerticalAlignment="Top" Width="120"/>
+        <materialDesign:TimePicker Is24Hours="True" x:Name="PresetTimePickerFin" Margin="573,215,107,0"/>
+
+    </Grid>
+</Window>

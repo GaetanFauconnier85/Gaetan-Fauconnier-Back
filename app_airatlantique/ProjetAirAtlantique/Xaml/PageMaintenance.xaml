@@ -1,0 +1,27 @@
+﻿<Page x:Class="ProjetAirAtlantique.Xaml.PageMaintenance"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetAirAtlantique.Xaml"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageMaintenance">
+
+    <Grid  Background="White" Margin="0,0,0,0">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" CanUserAddRows="false" VerticalAlignment="Top" AutoGenerateColumns="False" CanUserReorderColumns="False" MinColumnWidth="170" Height="auto" Width="auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Plane.Libelle}" Width="*" ClipboardContentBinding="{x:Null}" Header="Avion"/>
+                <DataGridTextColumn Binding="{Binding Incident.Libelle}" Width="*" ClipboardContentBinding="{x:Null}" Header="Incident"/>
+                <DataGridTextColumn Binding="{Binding Responsible.Name}" Width="*" ClipboardContentBinding="{x:Null}" Header="Responsable"/>
+                <DataGridTextColumn Binding="{Binding start_date}"  Width="*" ClipboardContentBinding="{x:Null}" Header="Date Début"/>
+                <DataGridTextColumn Binding="{Binding planned_date}"  Width="*" ClipboardContentBinding="{x:Null}" Header="Date estimée"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+    
+
+
+</Page>

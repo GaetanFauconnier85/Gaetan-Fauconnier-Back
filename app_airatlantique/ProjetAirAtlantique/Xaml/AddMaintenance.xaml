@@ -1,0 +1,79 @@
+﻿<Page x:Class="ProjetAirAtlantique.Xaml.AddMaintenance"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetAirAtlantique.Xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddMaintenance">
+
+    <Grid Background="White" Margin="-228,81,-150,-112" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox x:Name="avionList"
+                   Text="Choisissez un avion"
+                   MinHeight="25"
+                   MinWidth="125"
+                   Width="auto"
+                   Height="auto"  
+                   FontSize="18"    
+                   HorizontalAlignment="Center"   
+                   VerticalAlignment="Center"  
+                   BorderThickness="0"  
+                   VerticalContentAlignment="Center"  
+                   Background="Transparent"  
+                   Foreground="Black"  
+                   IsEditable="True"   
+                   Margin="241,244,841,393" 
+                   SelectionChanged="avionList_SelectionChanged"/>
+
+        <ComboBox x:Name="incidentList"
+                  Text="Choisissez un incident"
+                  MinHeight="25"
+                  MinWidth="125"
+                  Width="auto"   
+                  Height="auto"  
+                  FontSize="18"    
+                  HorizontalAlignment="Center"   
+                  VerticalAlignment="Center"  
+                  BorderThickness="0"  
+                  VerticalContentAlignment="Center"
+                  Background="Transparent"  
+                  Foreground="Black"
+                  IsEditable="True"
+                  Margin="460,244,601,393"/>
+
+        <DatePicker MaxHeight="50" MaxWidth="150" Name="datedebut" VerticalAlignment="Center" Width="auto" materialDesign:HintAssist.Hint="Date de départ" Margin="547,227,253,421"/>
+        <materialDesign:TimePicker MaxHeight="50" MaxWidth="125" Height="auto" Width="auto" Is24Hours="True" x:Name="heuredebut" Margin="773,227,72,421" materialDesign:HintAssist.Hint="Heure de départ"/>
+        <DatePicker MaxHeight="50" MaxWidth="150" Name="dateprevu" VerticalAlignment="Center" Width="auto" materialDesign:HintAssist.Hint="Date de fin prévue" Background="White" Margin="547,260,253,388" DisplayDate="2018-12-17" />
+        <materialDesign:TimePicker MaxHeight="50" MaxWidth="125" Height="auto" Width="auto" Is24Hours="True" x:Name="heurefin" Margin="773,260,72,388" materialDesign:HintAssist.Hint="Heure de fin"/>
+
+        <StackPanel  VerticalAlignment="Center" Name="StackEmploye" HorizontalAlignment="Center" MinWidth="155" Margin="241,347,841,115" Height="211" Width="173"/>
+
+        <ComboBox x:Name="responsableList"
+                  Text="Choisissez un responsable"
+                  FontSize="18"    
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Center"  
+                  BorderThickness="0"  
+                  VerticalContentAlignment="Center"   
+                  Background="Transparent"  
+                  Foreground="Black"  
+                  IsEditable="True" Margin="502,347,0,290" Width="auto" Height="auto"/>
+
+        <Button BorderBrush="{x:Null}" Content="Enregistrer" HorizontalAlignment="Center" Height="auto" Margin="833,347,321,299" VerticalAlignment="Center" Width="auto" Background="#FF8F582B" Click="Button_Click"/>
+        <Label x:Name="Titre" FontSize="25" HorizontalContentAlignment="Center" Content="Ajout d'une maintenance" HorizontalAlignment="Left" Margin="460,138,0,0" VerticalAlignment="Top" Width="409"/>
+        <Label x:Name="ErrorAvion" Foreground="Red" Visibility="Hidden" Content="Veuillez selectionner un avion" HorizontalAlignment="Left" Margin="241,280,0,0" VerticalAlignment="Top" Width="173"/>
+        <Label x:Name="ErrorIncident" Foreground="Red" Visibility="Hidden" Content="Veuillez choisir un incident" HorizontalAlignment="Left" Margin="460,280,0,0" VerticalAlignment="Top" Width="194"/>
+        <Label x:Name="ErrorDate" Foreground="Red" Visibility="Hidden" Content="Veuillez entrer les horaires" HorizontalAlignment="Left" Margin="809,290,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ErrorResponsible" Foreground="Red" Visibility="Hidden" Content="Veuillez entrer un responsable" HorizontalAlignment="Left" Margin="547,388,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ErrorEmployee" Foreground="Red" Visibility="Hidden" Content="Veuillez choisir des employés" HorizontalAlignment="Left" Margin="245,444,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
